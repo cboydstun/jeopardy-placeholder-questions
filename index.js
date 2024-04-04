@@ -1,7 +1,11 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const PORT = process.env.PORT || 8080;
 const { placeholderQuestions } = require('./placeholder-questions');
+
+// Middleware
+app.use(cors());
 
 // GET - /api/health - returns OK if the server is running
 app.get('/api/health', (req, res) => {
